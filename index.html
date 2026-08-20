@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SANBAR EMERGENCY CLOWN DISPATCH - 24 HOUR SERVICE</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23fff'/%3E%3Ccircle cx='16' cy='19' r='5' fill='%23f00'/%3E%3Ccircle cx='11' cy='12' r='2' fill='%23000'/%3E%3Ccircle cx='21' cy='12' r='2' fill='%23000'/%3E%3C/svg%3E">
+<style>
+  /* ==== SANBAR EMERGENCY CLOWN DISPATCH ====
+     Best viewed in Netscape Navigator 4.0
+     (c) 1997-2026 all rights reserved do not steal  */
+
+  html,body{ overflow-x:hidden; max-width:100%; }
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0; padding:0;
+    background-color:#000080;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 10px, transparent 10px 20px),
+      repeating-linear-gradient(-45deg, rgba(255,0,0,.06) 0 10px, transparent 10px 20px);
+    color:#ff0;
+    font-family:"Comic Sans MS","Chalkboard SE","Trebuchet MS",cursive,sans-serif;
+    font-size:13px; line-height:1.25;
+    text-align:center;
+  }
+
+  .wrap{ width:100%; max-width:1800px; margin:0 auto; padding:4px; }
+
+  /* ---------- 3 column 90s layout ---------- */
+  .cols{ display:grid; grid-template-columns:210px minmax(0,1fr) 230px; gap:6px; align-items:start; }
+  @media (max-width:1100px){ .cols{ grid-template-columns:190px minmax(0,1fr); } .col-r{ grid-column:1 / -1; } }
+  @media (max-width:760px){ .cols{ grid-template-columns:1fr; } .col-l,.col-r{ grid-column:auto; } }
+
+  .panel{
+    background:#c0c0c0; color:#000;
+    border-top:2px solid #fff; border-left:2px solid #fff;
+    border-right:2px solid #404040; border-bottom:2px solid #404040;
+    margin:0 0 6px; padding:6px;
+  }
+  .panel.dark{ background:#000; color:#0f0; border-color:#0f0 #060 #060 #0f0; }
+  .panel h2{ font-size:14px; margin:0 0 5px; }
+  .panel h3{ font-size:12px; margin:0 0 4px; }
+  .panel p{ margin:4px 0; }
+
+  h1.rainbow{
+    font-size:clamp(20px,4.4vw,44px); line-height:1; margin:2px 0; font-weight:900;
+    background:linear-gradient(90deg,#f00,#f80,#ff0,#0f0,#0ff,#00f,#f0f,#f00);
+    background-size:200% 100%;
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:transparent;
+    animation:slide 3s linear infinite;
+  }
+  @keyframes slide{ to{ background-position:-200% 0; } }
+
+  .blink{ animation:blink 1s steps(2,start) infinite; }
+  @keyframes blink{ to{ visibility:hidden; } }
+
+  .glow{ color:#0ff; text-shadow:0 0 5px #0ff,1px 1px 0 #000; }
+  .hot{ color:#f00; font-weight:bold; }
+  .lime{ color:#0f0; } .mag{ color:#f0f; } .cyan{ color:#0ff; }
+
+  marquee{ background:#000; color:#0f0; border-top:2px ridge #0f0; border-bottom:2px ridge #0f0; padding:2px 0; font-weight:bold; font-size:13px; }
+
+  img{ max-width:100%; height:auto; display:block; }
+
+  /* ---------- hero row: image + text side by side ---------- */
+  .herorow{ display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:8px; align-items:start; }
+  @media (max-width:620px){ .herorow{ grid-template-columns:1fr; } }
+  .hero{ border:5px ridge #fc0; width:100%; }
+
+  /* ---------- dense photo grid ---------- */
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(118px,1fr)); gap:5px; }
+  .cell{ background:#fff; border:2px outset #ccc; padding:3px; color:#000; }
+  .cell img{ width:100%; height:96px; object-fit:cover; border:1px inset #999; }
+  .cell .cap{ font-size:10px; font-weight:bold; margin-top:2px; line-height:1.1; }
+  .cell .stat{ font-size:9px; color:#080; }
+
+  .gifgrid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:6px; }
+  .gifbox{ border:4px ridge #f0f; background:#000; }
+  .gifbox img{ width:100%; }
+  .gifbox .lbl{ font-size:10px; color:#0f0; padding:2px; font-weight:bold; }
+
+  table.rates{ width:100%; border-collapse:collapse; background:#fff; color:#000; font-size:11px; }
+  table.rates th{ background:#000080; color:#ff0; padding:3px; border:1px outset #ccc; }
+  table.rates td{ padding:3px 4px; border:1px solid #999; text-align:left; }
+  table.rates tr:nth-child(even){ background:#ffc; }
+  .price{ color:#080; font-weight:bold; white-space:nowrap; }
+
+  .bigbtn{
+    display:block; width:100%; padding:9px 6px; margin:6px 0;
+    background:linear-gradient(#f55,#c00); color:#fff!important;
+    font-size:16px; font-weight:900; text-decoration:none;
+    border:3px outset #f88; cursor:pointer; font-family:inherit;
+  }
+  .bigbtn:active{ border-style:inset; }
+
+  hr.flames{ border:0; height:9px; margin:6px 0;
+    background:repeating-linear-gradient(90deg,#f00 0 10px,#f80 10px 20px,#ff0 20px 30px); }
+
+  .counter{ display:inline-block; background:#000; color:#0f0;
+    font-family:"Courier New",monospace; font-size:17px; letter-spacing:3px;
+    padding:3px 6px; border:2px inset #0f0; }
+
+  .constr{ font-weight:bold; color:#000; background:#fc0; display:block; padding:3px; border:2px dashed #000; font-size:11px; }
+  .ring{ font-size:10px; background:#000; color:#fff; padding:5px; border:1px solid #fff; }
+  .ring a{ color:#0ff; }
+  a{ color:#00e; } .dark a{ color:#0ff; }
+  .small{ font-size:10px; }
+  .quote{ font-style:italic; color:#000080; font-size:11px; margin:5px 0; }
+
+  .newstar{ display:inline-block; background:#ff0; color:#f00; font-weight:900;
+    font-size:9px; padding:1px 4px; transform:rotate(-12deg); border:1px solid #f00;
+    animation:pulse .7s ease-in-out infinite alternate; }
+  @keyframes pulse{ to{ transform:rotate(-12deg) scale(1.2); } }
+
+  /* nav buttons */
+  .nav a{ display:block; background:#000080; color:#ff0!important; text-decoration:none;
+    padding:4px; margin:2px 0; border:2px outset #6666cc; font-size:11px; font-weight:bold; }
+  .nav a:hover{ background:#f00; }
+
+  /* music box */
+  #musicbtn{ width:100%; padding:7px 4px; font-family:inherit; font-weight:900; font-size:12px;
+    background:linear-gradient(#8f8,#0a0); color:#000; border:3px outset #afa; cursor:pointer; }
+  #musicbtn.off{ background:linear-gradient(#ccc,#888); border-color:#eee; }
+  .eq{ display:flex; gap:2px; height:16px; align-items:flex-end; justify-content:center; margin-top:4px; }
+  .eq i{ width:5px; background:#0f0; height:4px; }
+  .eq.on i{ animation:eq .6s ease-in-out infinite alternate; }
+  .eq.on i:nth-child(2){ animation-delay:.15s } .eq.on i:nth-child(3){ animation-delay:.3s }
+  .eq.on i:nth-child(4){ animation-delay:.45s } .eq.on i:nth-child(5){ animation-delay:.1s }
+  @keyframes eq{ to{ height:16px; } }
+
+  .ad{ background:#fff; border:2px dashed #f00; color:#000; font-size:10px; padding:4px; margin:0 0 6px; }
+</style>
+</head>
+<body>
+
+<marquee scrollamount="8">*** NOW DISPATCHING 24 HOURS A DAY *** NO JOB TOO SMALL *** NO JOB TOO FUNNY *** HONK TWICE IN AN EMERGENCY *** WE ACCEPT CASH ONLY *** ASK ABOUT OUR GOAT POLICY ***</marquee>
+
+<div class="wrap">
+
+  <h1 class="rainbow">SANBAR EMERGENCY CLOWN DISPATCH</h1>
+  <p class="glow" style="margin:1px 0"><b>~*~ SERVING THE GREATER METRO AREA SINCE 2019 ~*~</b>
+     &nbsp; <span class="blink hot">&#9733; 24 HOUR RAPID RESPONSE &#9733;</span></p>
+
+  <div class="cols">
+
+    <!-- ============ LEFT SIDEBAR ============ -->
+    <div class="col-l">
+      <div class="panel nav">
+        <h3>&#9658; NAVIGATION</h3>
+        <a href="#tech">MEET THE CLOWN</a>
+        <a href="#prep">PRE-DEPLOYMENT PREP</a>
+        <a href="#callouts">RECENT CALLOUTS</a>
+        <a href="#footage">LIVE FOOTAGE</a>
+        <a href="#rates">RATE CARD</a>
+        <a href="#says">TESTIMONIALS</a>
+        <a href="#">GUESTBOOK</a>
+        <a href="#">LINKS</a>
+      </div>
+
+      <div class="panel dark">
+        <h3 class="mag">&#9835; MIDI JUKEBOX &#9835;</h3>
+        <p class="small">NOW PLAYING:<br><b class="lime">clowns.mid</b></p>
+        <button id="musicbtn">&#9835; MUSIC IS ON</button>
+        <div class="eq on" id="eq"><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="small" style="color:#888">Entry of the Gladiators<br>(J. Fu&#269;&#237;k, 1897)</p>
+      </div>
+
+      <div class="panel">
+        <h3>&#9742; DISPATCH LINE</h3>
+        <p style="font-size:15px;font-weight:900;color:#c00">HONK-4-U</p>
+        <a class="bigbtn" href="#rates">REQUEST&nbsp;A&nbsp;CLOWN</a>
+        <p class="small">(button does not work.<br>please honk.)</p>
+      </div>
+
+      <div class="ad">
+        <b class="hot">&#9888; NOTICE &#9888;</b><br>
+        We do NOT do birthdays.<br>Do not ask.<br>We do them. But do not ask.
+      </div>
+
+      <div class="panel dark">
+        <p class="lime small"><b>VISITORS</b></p>
+        <span class="counter">00013847</span>
+      </div>
+    </div>
+
+    <!-- ============ CENTER ============ -->
+    <div class="col-c">
+
+      <div class="panel">
+        <div class="herorow">
+          <img class="hero" src="assets/IMG_1707.jpg" alt="Lead technician on duty">
+          <div style="text-align:left">
+            <h2 style="color:#c00">&#9888; OUR GUARANTEE &#9888;</h2>
+            <p style="font-size:19px;line-height:1.1"><b>WE ARRIVE IN 30 MINUTES<br>OR THE BALLOON IS <span class="hot">FREE.</span></b></p>
+            <p><b>Fully insured. Licensed. Bonded. Honking.</b></p>
+            <p class="small">Lead technician photographed on active duty, 2026. Our technician is
+               available at all hours and has never once been described as &quot;well rested&quot;.</p>
+            <table class="rates" style="margin-top:5px">
+              <tr><th>METRIC</th><th>VALUE</th></tr>
+              <tr><td>Average response time</td><td class="price">4 min</td></tr>
+              <tr><td>Callouts completed</td><td class="price">1,204</td></tr>
+              <tr><td>Callouts requested</td><td class="price">11</td></tr>
+              <tr><td>Balloons deployed</td><td class="price">40,000+</td></tr>
+              <tr><td>Complaints upheld</td><td class="price">0</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <hr class="flames">
+
+      <div class="panel dark" id="tech">
+        <h2 class="lime">&gt;&gt; MEET YOUR TECHNICIAN &lt;&lt;</h2>
+        <div class="grid">
+          <div class="cell"><img src="assets/DSCF5152.jpg" alt="Technician portrait"><div class="cap">SHAWKAT SANBAR</div><div class="stat">Founder &amp; Chief Clown</div></div>
+          <div class="cell"><img src="assets/IMG_4681.jpg" alt="Close up one"><div class="cap">CERTIFIED</div><div class="stat">Greasepaint Level III</div></div>
+          <div class="cell"><img src="assets/IMG_4685.jpg" alt="Close up two"><div class="cap">ON CALL</div><div class="stat">Response: 4 min</div></div>
+          <div class="cell"><img src="assets/DSCF5143.jpg" alt="Field portrait"><div class="cap">FIELD READY</div><div class="stat">All weather</div></div>
+        </div>
+      </div>
+
+      <div class="panel" id="prep">
+        <h2 style="color:#000080">&#9881; PRE-DEPLOYMENT PREP <span class="newstar">NEW!</span></h2>
+        <div class="grid">
+          <div class="cell"><img src="assets/TREY_A.jpg" alt="Applying greasepaint"><div class="cap">APPLYING GREASEPAINT</div><div class="stat">STEP 1 OF 1</div></div>
+          <div class="cell"><img src="assets/TREY_B.jpg" alt="Mirror check"><div class="cap">MIRROR CHECK</div><div class="stat">PASSED</div></div>
+          <div class="cell"><img src="assets/TREY_C.jpg" alt="Alternate configuration"><div class="cap">ALT. CONFIGURATION</div><div class="stat">FOR FORMAL CALLOUTS</div></div>
+          <div class="cell"><img src="assets/TREY_PREP.gif" alt="Prep footage"><div class="cap">PREP FOOTAGE</div><div class="stat">LIVE</div></div>
+        </div>
+        <p class="small">Every technician is fully painted before dispatch. There are no exceptions and there is no removal procedure.</p>
+      </div>
+
+      <div class="panel" id="callouts">
+        <h2 style="color:#000080">&#9998; RECENT CALLOUTS <span class="newstar">NEW!</span></h2>
+        <div class="grid">
+          <div class="cell"><img src="assets/IMG_1720.jpg" alt="Livestock"><div class="cap">LIVESTOCK SITUATION</div><div class="stat">RESOLVED</div></div>
+          <div class="cell"><img src="assets/DSCF5196.jpg" alt="Catering"><div class="cap">CATERING INCIDENT</div><div class="stat">CONTAINED</div></div>
+          <div class="cell"><img src="assets/DSCF5155.jpg" alt="Crowd control"><div class="cap">CROWD CONTROL</div><div class="stat">ONGOING</div></div>
+          <div class="cell"><img src="assets/DSCF5145.jpg" alt="Object retrieval"><div class="cap">OBJECT RETRIEVAL</div><div class="stat">JUGGLED</div></div>
+          <div class="cell"><img src="assets/IMG_1782.jpg" alt="Off duty"><div class="cap">OFF DUTY</div><div class="stat">STILL A CLOWN</div></div>
+          <div class="cell"><img src="assets/DSCF5143.jpg" alt="Perimeter"><div class="cap">PERIMETER SWEEP</div><div class="stat">CLEAR</div></div>
+        </div>
+      </div>
+
+      <div class="panel dark" id="footage">
+        <h2 class="mag">&#9658; LIVE DISPATCH FOOTAGE &#9668;</h2>
+        <div class="gifgrid">
+          <div class="gifbox"><img src="assets/JUGGLING.gif" alt="Juggling incident in progress"><div class="lbl">CAM 01 &mdash; JUGGLING IN PROGRESS</div></div>
+          <div class="gifbox"><img src="assets/IMG_1700.gif" alt="Perimeter breach"><div class="lbl">CAM 02 &mdash; PERIMETER BREACH</div></div>
+          <div class="gifbox"><img src="assets/IMG_6736.gif" alt="Indoor callout"><div class="lbl">CAM 03 &mdash; INDOOR CALLOUT</div></div>
+        </div>
+        <p class="small" style="color:#0f0">Footage is unedited. Footage is always unedited.</p>
+      </div>
+
+      <div class="panel" id="rates">
+        <h2 style="color:#000080">&#9636; RATE CARD &#9636;</h2>
+        <table class="rates">
+          <tr><th>SERVICE</th><th>RATE</th></tr>
+          <tr><td>Standard callout (business hours)</td><td class="price">$40</td></tr>
+          <tr><td>Emergency callout (after hours)</td><td class="price">$40</td></tr>
+          <tr><td>Balloon animal, simple (dog, snake)</td><td class="price">$5</td></tr>
+          <tr><td>Balloon animal, complex (giraffe, regret)</td><td class="price">$25</td></tr>
+          <tr><td>Juggling, 3 objects</td><td class="price">$30</td></tr>
+          <tr><td>Juggling, 4 or more objects</td><td class="price">MARKET RATE</td></tr>
+          <tr><td>Silent approach (no honking)</td><td class="price">$200</td></tr>
+          <tr><td>Leaving when asked</td><td class="price">$500</td></tr>
+          <tr><td>Livestock surcharge</td><td class="price">see goat</td></tr>
+        </table>
+        <p class="small">Cash only. No refunds. The clown decides when the job is done.</p>
+      </div>
+    </div>
+
+    <!-- ============ RIGHT SIDEBAR ============ -->
+    <div class="col-r">
+      <div class="panel" id="says">
+        <h3 style="color:#c00">&#10077; WHAT PEOPLE SAY &#10078;</h3>
+        <p class="quote">&quot;I did not request this.&quot;<br><span class="small">&mdash; verified customer</span></p>
+        <p class="quote">&quot;He was here in under 30 minutes. I never gave him my address.&quot;<br><span class="small">&mdash; verified customer</span></p>
+        <p class="quote">&quot;Five stars. The goat is fine.&quot;<br><span class="small">&mdash; verified customer</span></p>
+        <p class="quote">&quot;Please stop.&quot;<br><span class="small">&mdash; verified customer</span></p>
+      </div>
+
+      <div class="panel dark">
+        <h3 class="lime">SERVICE AREA</h3>
+        <p class="small">Greater metro area.<br>Adjacent metro areas.<br>Your street.<br>Behind you.</p>
+      </div>
+
+      <div class="ad">
+        <b>&#9733; AWARD WINNING &#9733;</b><br>
+        Voted #1 Emergency Clown<br>by this website, 2026.
+      </div>
+
+      <div class="panel">
+        <span class="constr">&#128679; UNDER CONSTRUCTION &#128679;</span>
+      </div>
+
+      <div class="panel dark">
+        <h3 class="cyan">&#9993; GUESTBOOK</h3>
+        <p class="small"><a href="#">[ VIEW ]</a> <a href="#">[ SIGN ]</a><br>
+        <span style="color:#888">(currently 100% spam)</span></p>
+      </div>
+
+      <div class="panel">
+        <div class="ring">
+          <b>&#9884; THE CLOWN WEBRING &#9884;</b><br>
+          <a href="#">&#171;PREV</a> | <a href="#">RANDOM</a> | <a href="#">NEXT&#187;</a><br>
+          Member #4 of 4.
+        </div>
+      </div>
+
+      <div class="panel dark">
+        <p class="small" style="color:#888">
+          Best viewed in Netscape<br>Navigator 4.0 at 800&times;600.<br><br>
+          &copy; 1997&ndash;2026 SANBAR<br>EMERGENCY CLOWN DISPATCH.<br>HONK RESPONSIBLY.
+        </p>
+      </div>
+    </div>
+
+  </div><!-- /cols -->
+</div>
+
+<script>
+/* ---- clowns.mid : Entry of the Gladiators, synthesised with Web Audio.
+   Public domain melody (Julius Fucik, 1897). No external files. ---- */
+(function(){
+  var ctx=null, timer=null, playing=false;
+  var btn=document.getElementById('musicbtn'), eq=document.getElementById('eq');
+
+  var F={'C3':130.81,'D3':146.83,'E3':164.81,'F3':174.61,'G3':196.00,'A3':220.00,'Bb3':233.08,'B3':246.94,
+         'C4':261.63,'Db4':277.18,'D4':293.66,'Eb4':311.13,'E4':329.63,'F4':349.23,'Gb4':369.99,'G4':392.00,
+         'Ab4':415.30,'A4':440.00,'Bb4':466.16,'B4':493.88,'C5':523.25,'Db5':554.37,'D5':587.33,'E5':659.25};
+
+  // melody: [note, beats]  — the famous chromatic circus strain
+  var MEL=[['C5',.5],['B4',.5],['Bb4',.5],['A4',.5],['Ab4',.5],['G4',.5],['Gb4',.5],['F4',.5],
+           ['E4',.5],['F4',.5],['G4',.5],['A4',.5],['Bb4',.5],['B4',.5],['C5',1],
+           ['C5',.5],['B4',.5],['Bb4',.5],['A4',.5],['Ab4',.5],['G4',.5],['Gb4',.5],['F4',.5],
+           ['E4',.5],['G4',.5],['C5',.5],['E5',.5],['D5',1],['C5',1],
+           ['G4',.5],['A4',.5],['Bb4',.5],['B4',.5],['C5',1],['E4',1],
+           ['F4',.5],['G4',.5],['A4',.5],['Bb4',.5],['C5',1],['C5',1]];
+  var BASS=['C3','G3','C3','G3','F3','C3','G3','C3'];
+
+  var BPM=150, beat=60/BPM;
+
+  function blip(freq,t,dur,type,gain){
+    var o=ctx.createOscillator(), g=ctx.createGain();
+    o.type=type; o.frequency.value=freq;
+    g.gain.setValueAtTime(0,t);
+    g.gain.linearRampToValueAtTime(gain,t+0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur*0.95);
+    o.connect(g); g.connect(ctx.destination);
+    o.start(t); o.stop(t+dur);
+  }
+
+  function schedule(start){
+    var t=start, i, b=0;
+    for(i=0;i<MEL.length;i++){
+      var n=MEL[i], f=F[n[0]], d=n[1]*beat;
+      if(f) blip(f,t,d,'square',0.13);
+      // oom-pah bass on every beat
+      var steps=Math.max(1,Math.round(n[1]/0.5));
+      for(var s=0;s<steps;s++){
+        var bf=F[BASS[b%BASS.length]];
+        blip(bf,t+s*0.5*beat,0.5*beat*0.8,'triangle',0.10);
+        b++;
+      }
+      t+=d;
+    }
+    return t-start; // loop length
+  }
+
+  function loop(){
+    var len=schedule(ctx.currentTime+0.05);
+    timer=setTimeout(function(){ if(playing) loop(); }, len*1000-60);
+  }
+
+  function uiOn(){  btn.textContent='♫ MUSIC IS ON';   btn.classList.remove('off'); eq.classList.add('on'); }
+  function uiOff(){ btn.textContent='♫ TURN MUSIC ON'; btn.classList.add('off');    eq.classList.remove('on'); }
+
+  // actually begin scheduling notes (context must already be running)
+  function begin(){
+    if(playing) return;
+    playing=true; loop(); uiOn();
+  }
+
+  function start(){
+    if(playing) return;
+    ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();
+    uiOn();                       // show ON straight away
+    if(ctx.state==='suspended'){
+      // blocked by autoplay policy: resume, and only schedule once it is running
+      ctx.resume().then(begin).catch(function(){});
+    }else{
+      begin();
+    }
+  }
+
+  function stop(){
+    playing=false; clearTimeout(timer);
+    if(ctx){ ctx.close(); ctx=null; }
+    uiOff();
+  }
+
+  btn.addEventListener('click',function(){ playing?stop():start(); });
+
+  /* Music is ON by default. Browsers block audio until the visitor interacts
+     with the page, so: try immediately, then latch onto the very first gesture
+     of any kind. A mouse move is usually enough, so it starts almost at once. */
+  var EV=['pointerdown','mousedown','mousemove','keydown','touchstart','wheel','scroll'];
+  var armed=true;
+  function kick(){
+    if(!armed) return;
+    armed=false;
+    EV.forEach(function(e){ window.removeEventListener(e,kick,true); });
+    if(ctx && ctx.state==='suspended'){ ctx.resume().then(begin).catch(function(){}); }
+    else { start(); }
+  }
+  EV.forEach(function(e){ window.addEventListener(e,kick,true); });
+
+  // optimistic attempt on load, in case this browser allows it outright
+  try{ start(); }catch(e){}
+})();
+</script>
+</body>
+</html>
