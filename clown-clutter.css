@@ -1,0 +1,188 @@
+/* ============================================================
+   GEOCITIES CLOWN CLUTTER LAYER
+   Authentic 90s GIFs (GeoCities via Internet Archive GifCities
+   + darklady karnival clipart). Saved locally — no hotlinks.
+   pointer-events:none so the dispatch desk still works.
+   Reduced-motion? Absolutely not. This is a clown site.
+   ============================================================ */
+
+#clown-clutter{
+  position:fixed;
+  inset:0;
+  z-index:40;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+#clown-clutter img,
+.gc-edge img{
+  pointer-events:none;
+  max-width:none !important;
+  width:auto;
+  height:auto;
+  display:block;
+  image-rendering:auto;
+}
+
+/* black-bg 90s gifs: knock the black out over navy */
+.gc-knock{ mix-blend-mode:screen; }
+
+/* ---------- fixed corners / edges ---------- */
+.gc{
+  position:absolute;
+}
+.gc-tl{ top:28px; left:4px; width:92px; }
+.gc-tr{ top:22px; right:6px; width:110px; }
+.gc-bl{ bottom:8px; left:4px; width:100px; }
+.gc-br{ bottom:6px; right:4px; width:108px; }
+.gc-leftmid{ top:42%; left:0; width:70px; }
+.gc-rightmid{ top:38%; right:2px; width:58px; }
+.gc-underh{ top:78px; left:38%; width:42px; }
+.gc-underh2{ top:64px; right:28%; width:48px; }
+.gc-foot{ bottom:48px; left:46%; width:72px; }
+
+/* tiled 90s carnival strip along the very bottom */
+.gc-tilebar{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:40px;
+  background-image:
+    url("assets/gifs/karnival-clown.gif"),
+    url("assets/gifs/karnival-juggler.gif"),
+    url("assets/gifs/karnival-ferris.gif");
+  background-repeat:repeat-x;
+  background-position:0 0, 37px 0, 74px 0;
+  background-size:37px 37px, 37px 37px, 37px 37px;
+  opacity:.92;
+}
+
+/* a second sparse tile row under the top marquee */
+.gc-tiletop{
+  position:absolute;
+  left:0; right:0; top:22px;
+  height:37px;
+  background-image:url("assets/gifs/karnival-clown.gif");
+  background-repeat:repeat-x;
+  background-size:37px 37px;
+  opacity:.35;
+}
+
+/* ---------- movers ---------- */
+.gc-marquee{
+  top:118px;
+  left:0;
+  width:78px;
+  animation:gc-marquee 18s linear infinite;
+}
+.gc-marquee2{
+  top:auto; bottom:92px;
+  left:0;
+  width:88px;
+  animation:gc-marquee 26s linear infinite reverse;
+}
+.gc-bounce{
+  top:210px;
+  left:8px;
+  width:72px;
+  animation:gc-bounce .7s ease-in-out infinite;
+}
+.gc-bounce-r{
+  top:260px;
+  right:10px;
+  left:auto;
+  width:64px;
+  animation:gc-constr .55s ease-in-out infinite;
+}
+.gc-wander{
+  top:16%;
+  left:8%;
+  width:86px;
+  animation:gc-wander 22s ease-in-out infinite;
+}
+.gc-wander2{
+  top:55%;
+  left:60%;
+  width:96px;
+  animation:gc-wander2 28s ease-in-out infinite;
+}
+.gc-spin{
+  top:48%;
+  left:50%;
+  width:86px;
+  margin-left:-43px;
+  animation:gc-spin 12s linear infinite;
+  opacity:.88;
+}
+.gc-spin-slow{
+  top:8%;
+  right:18%;
+  width:70px;
+  animation:gc-spin 20s linear infinite reverse;
+}
+.gc-float{
+  top:72%;
+  left:22%;
+  width:40px;
+  animation:gc-float 3.4s ease-in-out infinite;
+}
+.gc-float2{
+  top:30%;
+  right:16%;
+  width:52px;
+  animation:gc-float 4.2s ease-in-out infinite .6s;
+}
+.gc-diag{
+  top:8%;
+  left:0;
+  width:80px;
+  animation:gc-diag 16s linear infinite alternate;
+}
+
+/* keyframes — maximal, do not respect prefers-reduced-motion */
+@keyframes gc-marquee{
+  0%   { transform:translateX(-140px); }
+  100% { transform:translateX(110vw); }
+}
+@keyframes gc-bounce{
+  0%,100% { transform:translateY(0); }
+  50%     { transform:translateY(36px); }
+}
+@keyframes gc-constr{
+  0%,100% { transform:translateY(0) scale(1); }
+  35%     { transform:translateY(-26px) scale(1.08); }
+  55%     { transform:translateY(3px) scale(.96); }
+}
+@keyframes gc-float{
+  0%,100% { transform:translate(0,0); }
+  50%     { transform:translate(12px,-22px); }
+}
+@keyframes gc-spin{
+  to { transform:rotate(360deg); }
+}
+@keyframes gc-wander{
+  0%   { transform:translate(0,0) rotate(-4deg); }
+  20%  { transform:translate(38vw,10vh) rotate(8deg); }
+  40%  { transform:translate(62vw,36vh) rotate(-10deg); }
+  60%  { transform:translate(18vw,52vh) rotate(6deg); }
+  80%  { transform:translate(48vw,18vh) rotate(-8deg); }
+  100% { transform:translate(0,0) rotate(-4deg); }
+}
+@keyframes gc-wander2{
+  0%   { transform:translate(0,0) rotate(6deg); }
+  25%  { transform:translate(-40vw,-18vh) rotate(-8deg); }
+  50%  { transform:translate(-20vw,22vh) rotate(10deg); }
+  75%  { transform:translate(18vw,-8vh) rotate(-4deg); }
+  100% { transform:translate(0,0) rotate(6deg); }
+}
+@keyframes gc-diag{
+  0%   { transform:translate(0,0) rotate(0deg); }
+  100% { transform:translate(78vw,58vh) rotate(12deg); }
+}
+
+@media (max-width:760px){
+  .gc-tl,.gc-tr{ width:64px; }
+  .gc-bl,.gc-br{ width:72px; }
+  .gc-spin{ width:64px; margin-left:-32px; }
+  .gc-wander,.gc-wander2,.gc-diag{ width:64px; }
+  .gc-leftmid,.gc-rightmid{ display:none; }
+}
