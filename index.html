@@ -5,133 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SANBAR EMERGENCY CLOWN DISPATCH - 24 HOUR SERVICE</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23fff'/%3E%3Ccircle cx='16' cy='19' r='5' fill='%23f00'/%3E%3Ccircle cx='11' cy='12' r='2' fill='%23000'/%3E%3Ccircle cx='21' cy='12' r='2' fill='%23000'/%3E%3C/svg%3E">
-<style>
-  /* ==== SANBAR EMERGENCY CLOWN DISPATCH ====
-     Best viewed in Netscape Navigator 4.0
-     (c) 1997-2026 all rights reserved do not steal  */
-
-  html,body{ overflow-x:hidden; max-width:100%; }
-  *{ box-sizing:border-box; }
-
-  body{
-    margin:0; padding:0;
-    background-color:#000080;
-    background-image:
-      repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 10px, transparent 10px 20px),
-      repeating-linear-gradient(-45deg, rgba(255,0,0,.06) 0 10px, transparent 10px 20px);
-    color:#ff0;
-    font-family:"Comic Sans MS","Chalkboard SE","Trebuchet MS",cursive,sans-serif;
-    font-size:13px; line-height:1.25;
-    text-align:center;
-  }
-
-  .wrap{ width:100%; max-width:1800px; margin:0 auto; padding:4px; }
-
-  /* ---------- 3 column 90s layout ---------- */
-  .cols{ display:grid; grid-template-columns:210px minmax(0,1fr) 230px; gap:6px; align-items:start; }
-  @media (max-width:1100px){ .cols{ grid-template-columns:190px minmax(0,1fr); } .col-r{ grid-column:1 / -1; } }
-  @media (max-width:760px){ .cols{ grid-template-columns:1fr; } .col-l,.col-r{ grid-column:auto; } }
-
-  .panel{
-    background:#c0c0c0; color:#000;
-    border-top:2px solid #fff; border-left:2px solid #fff;
-    border-right:2px solid #404040; border-bottom:2px solid #404040;
-    margin:0 0 6px; padding:6px;
-  }
-  .panel.dark{ background:#000; color:#0f0; border-color:#0f0 #060 #060 #0f0; }
-  .panel h2{ font-size:14px; margin:0 0 5px; }
-  .panel h3{ font-size:12px; margin:0 0 4px; }
-  .panel p{ margin:4px 0; }
-
-  h1.rainbow{
-    font-size:clamp(20px,4.4vw,44px); line-height:1; margin:2px 0; font-weight:900;
-    background:linear-gradient(90deg,#f00,#f80,#ff0,#0f0,#0ff,#00f,#f0f,#f00);
-    background-size:200% 100%;
-    -webkit-background-clip:text; background-clip:text;
-    -webkit-text-fill-color:transparent; color:transparent;
-    animation:slide 3s linear infinite;
-  }
-  @keyframes slide{ to{ background-position:-200% 0; } }
-
-  .blink{ animation:blink 1s steps(2,start) infinite; }
-  @keyframes blink{ to{ visibility:hidden; } }
-
-  .glow{ color:#0ff; text-shadow:0 0 5px #0ff,1px 1px 0 #000; }
-  .hot{ color:#f00; font-weight:bold; }
-  .lime{ color:#0f0; } .mag{ color:#f0f; } .cyan{ color:#0ff; }
-
-  marquee{ background:#000; color:#0f0; border-top:2px ridge #0f0; border-bottom:2px ridge #0f0; padding:2px 0; font-weight:bold; font-size:13px; }
-
-  img{ max-width:100%; height:auto; display:block; }
-
-  /* ---------- hero row: image + text side by side ---------- */
-  .herorow{ display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:8px; align-items:start; }
-  @media (max-width:620px){ .herorow{ grid-template-columns:1fr; } }
-  .hero{ border:5px ridge #fc0; width:100%; }
-
-  /* ---------- dense photo grid ---------- */
-  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(118px,1fr)); gap:5px; }
-  .cell{ background:#fff; border:2px outset #ccc; padding:3px; color:#000; }
-  .cell img{ width:100%; height:96px; object-fit:cover; border:1px inset #999; }
-  .cell .cap{ font-size:10px; font-weight:bold; margin-top:2px; line-height:1.1; }
-  .cell .stat{ font-size:9px; color:#080; }
-
-  .gifgrid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:6px; }
-  .gifbox{ border:4px ridge #f0f; background:#000; }
-  .gifbox img{ width:100%; }
-  .gifbox .lbl{ font-size:10px; color:#0f0; padding:2px; font-weight:bold; }
-
-  table.rates{ width:100%; border-collapse:collapse; background:#fff; color:#000; font-size:11px; }
-  table.rates th{ background:#000080; color:#ff0; padding:3px; border:1px outset #ccc; }
-  table.rates td{ padding:3px 4px; border:1px solid #999; text-align:left; }
-  table.rates tr:nth-child(even){ background:#ffc; }
-  .price{ color:#080; font-weight:bold; white-space:nowrap; }
-
-  .bigbtn{
-    display:block; width:100%; padding:9px 6px; margin:6px 0;
-    background:linear-gradient(#f55,#c00); color:#fff!important;
-    font-size:16px; font-weight:900; text-decoration:none;
-    border:3px outset #f88; cursor:pointer; font-family:inherit;
-  }
-  .bigbtn:active{ border-style:inset; }
-
-  hr.flames{ border:0; height:9px; margin:6px 0;
-    background:repeating-linear-gradient(90deg,#f00 0 10px,#f80 10px 20px,#ff0 20px 30px); }
-
-  .counter{ display:inline-block; background:#000; color:#0f0;
-    font-family:"Courier New",monospace; font-size:17px; letter-spacing:3px;
-    padding:3px 6px; border:2px inset #0f0; }
-
-  .constr{ font-weight:bold; color:#000; background:#fc0; display:block; padding:3px; border:2px dashed #000; font-size:11px; }
-  .ring{ font-size:10px; background:#000; color:#fff; padding:5px; border:1px solid #fff; }
-  .ring a{ color:#0ff; }
-  a{ color:#00e; } .dark a{ color:#0ff; }
-  .small{ font-size:10px; }
-  .quote{ font-style:italic; color:#000080; font-size:11px; margin:5px 0; }
-
-  .newstar{ display:inline-block; background:#ff0; color:#f00; font-weight:900;
-    font-size:9px; padding:1px 4px; transform:rotate(-12deg); border:1px solid #f00;
-    animation:pulse .7s ease-in-out infinite alternate; }
-  @keyframes pulse{ to{ transform:rotate(-12deg) scale(1.2); } }
-
-  /* nav buttons */
-  .nav a{ display:block; background:#000080; color:#ff0!important; text-decoration:none;
-    padding:4px; margin:2px 0; border:2px outset #6666cc; font-size:11px; font-weight:bold; }
-  .nav a:hover{ background:#f00; }
-
-  /* music box */
-  #musicbtn{ width:100%; padding:7px 4px; font-family:inherit; font-weight:900; font-size:12px;
-    background:linear-gradient(#8f8,#0a0); color:#000; border:3px outset #afa; cursor:pointer; }
-  #musicbtn.off{ background:linear-gradient(#ccc,#888); border-color:#eee; }
-  .eq{ display:flex; gap:2px; height:16px; align-items:flex-end; justify-content:center; margin-top:4px; }
-  .eq i{ width:5px; background:#0f0; height:4px; }
-  .eq.on i{ animation:eq .6s ease-in-out infinite alternate; }
-  .eq.on i:nth-child(2){ animation-delay:.15s } .eq.on i:nth-child(3){ animation-delay:.3s }
-  .eq.on i:nth-child(4){ animation-delay:.45s } .eq.on i:nth-child(5){ animation-delay:.1s }
-  @keyframes eq{ to{ height:16px; } }
-
-  .ad{ background:#fff; border:2px dashed #f00; color:#000; font-size:10px; padding:4px; margin:0 0 6px; }
-</style>
+<link rel="stylesheet" href="dispatch.css">
 <link rel="stylesheet" href="clown-clutter.css">
 </head>
 <body>
@@ -167,7 +41,7 @@
 </div>
 
 
-<marquee scrollamount="8">*** NOW DISPATCHING 24 HOURS A DAY *** NO JOB TOO SMALL *** NO JOB TOO FUNNY *** HONK TWICE IN AN EMERGENCY *** WE ACCEPT CASH ONLY *** ASK ABOUT OUR GOAT POLICY ***</marquee>
+<marquee scrollamount="8">*** NOW DISPATCHING 24 HOURS A DAY *** NO JOB TOO SMALL *** NO JOB TOO FUNNY *** HONK TWICE IN AN EMERGENCY *** WE ACCEPT CASH ONLY *** <a href="goat-policy.html">ASK ABOUT OUR GOAT POLICY</a> ***</marquee>
 
 <div class="wrap">
 
@@ -187,8 +61,10 @@
         <a href="#footage">LIVE FOOTAGE</a>
         <a href="#rates">RATE CARD</a>
         <a href="#says">TESTIMONIALS</a>
-        <a href="#">GUESTBOOK</a>
-        <a href="#">LINKS</a>
+        <a href="guestbook.html">GUESTBOOK</a>
+        <a href="links.html">LINKS</a>
+        <a href="goat-policy.html">GOAT POLICY</a>
+        <a href="terms.html">TERMS OF HONK</a>
       </div>
 
       <div class="panel dark">
@@ -298,9 +174,15 @@
           <tr><td>Juggling, 4 or more objects</td><td class="price">MARKET RATE</td></tr>
           <tr><td>Silent approach (no honking)</td><td class="price">$200</td></tr>
           <tr><td>Leaving when asked</td><td class="price">$500</td></tr>
-          <tr><td>Livestock surcharge</td><td class="price">see goat</td></tr>
+          <tr><td>Livestock surcharge</td><td class="price"><a href="goat-policy.html">see goat</a></td></tr>
         </table>
         <p class="small">Cash only. No refunds. The clown decides when the job is done.</p>
+        <div class="agreebox">
+          <b>TERMS OF HONK (abridged)</b>
+          <p>Silent approach: $200. Leaving when asked: $500. The clown decides. Cash only. Goat is a surcharge, <a href="goat-policy.html">not a pet</a>.</p>
+          <label><input type="checkbox" class="honk-agree"> I Agree</label>
+          <span class="small">(<a href="terms.html">full terms</a> — the box unchecks itself. you still agree.)</span>
+        </div>
       </div>
     </div>
 
@@ -312,6 +194,7 @@
         <p class="quote">&quot;He was here in under 30 minutes. I never gave him my address.&quot;<br><span class="small">&mdash; verified customer</span></p>
         <p class="quote">&quot;Five stars. The goat is fine.&quot;<br><span class="small">&mdash; verified customer</span></p>
         <p class="quote">&quot;Please stop.&quot;<br><span class="small">&mdash; verified customer</span></p>
+        <p class="quote">&quot;A clown sat down in the studio audience in Glendale. The balloons were already in the rafters. I work in craft services.&quot;<br><span class="small">&mdash; verified customer</span></p>
       </div>
 
       <div class="panel dark">
@@ -326,26 +209,50 @@
 
       <div class="panel">
         <span class="constr">&#128679; UNDER CONSTRUCTION &#128679;</span>
+        <p class="small" style="margin:4px 0 0"><a href="goat-policy.html">goat policy page is open tho</a></p>
       </div>
 
-      <div class="panel dark">
+      <div class="panel" id="links">
+        <h3>&#9733; COOL LINKS &#9733;</h3>
+        <p class="small" style="text-align:left">
+          <a href="http://mikiazohrabian.com/"><b>SCREAN</b></a><br>
+          official games store of the dispatch<br><br>
+          <a href="http://tylerlofftus.com/"><b>The Tyler Lofftus Show (IMDb)</b></a><br>
+          corporate client / 40,000 balloons
+        </p>
+        <p class="small"><a href="links.html">more links &gt;&gt;</a></p>
+      </div>
+
+      <div class="panel dark" id="guestbook">
         <h3 class="cyan">&#9993; GUESTBOOK</h3>
-        <p class="small"><a href="#">[ VIEW ]</a> <a href="#">[ SIGN ]</a><br>
+        <p class="small"><a href="guestbook.html">[ VIEW ]</a> <a href="guestbook.html#sign">[ SIGN ]</a><br>
         <span style="color:#888">(currently 100% spam)</span></p>
+        <table class="gb">
+          <tbody data-gb data-gb-limit="3"></tbody>
+        </table>
+        <button class="signbtn" type="button" data-gb-sign>SIGN (HONK)</button>
+        <p class="small" style="color:#888">writes &quot;honked at [local time]&quot; on this computer only.</p>
       </div>
 
       <div class="panel">
         <div class="ring">
           <b>&#9884; THE CLOWN WEBRING &#9884;</b><br>
-          <a href="#">&#171;PREV</a> | <a href="#">RANDOM</a> | <a href="#">NEXT&#187;</a><br>
-          Member #4 of 4.
+          <a href="http://tylerlofftus.com/">&#171;PREV</a> |
+          <a class="ring-rand" href="http://shawkatsanbar.com/">RANDOM</a> |
+          <a href="http://mikiazohrabian.com/">NEXT&#187;</a><br>
+          Member #2 of 3.
         </div>
       </div>
 
       <div class="panel dark">
         <p class="small" style="color:#888">
           Best viewed in Netscape<br>Navigator 4.0 at 800&times;600.<br><br>
-          &copy; 1997&ndash;2026 SANBAR<br>EMERGENCY CLOWN DISPATCH.<br>HONK RESPONSIBLY.
+          &copy; 1997&ndash;2026 SANBAR<br>EMERGENCY CLOWN DISPATCH.<br>
+          <a href="goat-policy.html">goat policy</a> |
+          <a href="terms.html">terms of honk</a> |
+          <a href="guestbook.html">guestbook</a> |
+          <a href="links.html">links</a><br>
+          HONK RESPONSIBLY.
         </p>
       </div>
     </div>
@@ -454,5 +361,7 @@
   try{ start(); }catch(e){}
 })();
 </script>
+<script src="dispatch.js"></script>
+<script src="guestbook.js"></script>
 </body>
 </html>

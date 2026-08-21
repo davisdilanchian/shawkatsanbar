@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GUESTBOOK - SANBAR EMERGENCY CLOWN DISPATCH</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23fff'/%3E%3Ccircle cx='16' cy='19' r='5' fill='%23f00'/%3E%3Ccircle cx='11' cy='12' r='2' fill='%23000'/%3E%3Ccircle cx='21' cy='12' r='2' fill='%23000'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="dispatch.css">
+<link rel="stylesheet" href="clown-clutter.css">
+
+</head>
+<body>
+<div id="clown-clutter" aria-hidden="true">
+  <div class="gc-tiletop"></div>
+  <div class="gc-tilebar"></div>
+  <img class="gc gc-tl" src="assets/gifs/clown-anim.gif" alt="">
+  <img class="gc gc-tr gc-knock" src="assets/gifs/crazy-clown.gif" alt="">
+  <img class="gc gc-bl gc-knock" src="assets/gifs/jester.gif" alt="">
+  <img class="gc gc-br" src="assets/gifs/clown-big.gif" alt="">
+  <img class="gc gc-wander gc-knock" src="assets/gifs/ani-clown.gif" alt="">
+  <img class="gc gc-float" src="assets/gifs/balloon-float.gif" alt="">
+</div>
+
+<marquee scrollamount="8">*** NOW DISPATCHING 24 HOURS A DAY *** NO JOB TOO SMALL *** NO JOB TOO FUNNY *** HONK TWICE IN AN EMERGENCY *** WE ACCEPT CASH ONLY *** <a href="goat-policy.html">ASK ABOUT OUR GOAT POLICY</a> ***</marquee>
+
+<div class="wrap">
+  <p class="small"><a href="index.html" style="color:#ff0">&#9668; BACK TO DISPATCH</a></p>
+  <h1 class="rainbow">SANBAR EMERGENCY CLOWN DISPATCH</h1>
+  <p class="glow" style="margin:1px 0"><b>~*~ SERVING THE GREATER METRO AREA SINCE 2019 ~*~</b></p>
+
+  <div class="cols">
+    <div class="col-l">
+      <div class="panel nav">
+        <h3>&#9658; NAVIGATION</h3>
+        <a href="index.html">HOME / DISPATCH</a>
+        <a href="index.html#tech">MEET THE CLOWN</a>
+        <a href="index.html#rates">RATE CARD</a>
+        <a href="guestbook.html" class="here">GUESTBOOK</a>
+        <a href="links.html">LINKS</a>
+        <a href="goat-policy.html">GOAT POLICY</a>
+        <a href="terms.html">TERMS OF HONK</a>
+      </div>
+
+      <div class="panel">
+        <h3>&#9742; DISPATCH LINE</h3>
+        <p style="font-size:15px;font-weight:900;color:#c00">HONK-4-U</p>
+        <a class="bigbtn" href="index.html#rates">REQUEST&nbsp;A&nbsp;CLOWN</a>
+        <p class="small">(button does not work.<br>please honk.)</p>
+      </div>
+
+      <div class="ad">
+        <b class="hot">&#9888; NOTICE &#9888;</b><br>
+        We do NOT do birthdays.<br>Do not ask.<br>We do them. But do not ask.
+      </div>
+
+    </div>
+
+    <div class="col-c">
+
+      <div class="panel" id="sign">
+        <h2 style="color:#000080">&#9993; GUESTBOOK <span class="newstar">NEW!</span></h2>
+        <p>Sign our book. Tell us how the callout went. All entries are from verified customers unless they are spam. <b>Currently 100% spam</b> is still the official count, including the real ones.</p>
+        <p class="small">Entries so far: <b id="gb-count">12</b> &nbsp;|&nbsp; No backend. No webmaster. The Sign button writes to your computer and nowhere else.</p>
+
+        <div class="honkform">
+          <label>Name (ignored)</label>
+          <input type="text" placeholder="will be posted as Anonymous Honker" maxlength="40">
+          <label>Email (ignored, and also please do not)</label>
+          <input type="text" placeholder="we will not write back. we will arrive.">
+          <label>Comments (replaced)</label>
+          <textarea placeholder="whatever you type will become: honked at [local time]"></textarea>
+          <label><input type="checkbox" class="honk-agree"> I have read the <a href="goat-policy.html">goat policy</a></label>
+          <button class="signbtn" type="button" data-gb-sign>SIGN THE GUESTBOOK</button>
+          <p class="small">The button appends one line. The line is the honk. Fields above are decorations, like the goat.</p>
+        </div>
+      </div>
+
+      <div class="panel dark">
+        <h2 class="cyan">&gt;&gt; WHAT VERIFIED CUSTOMERS HONKED &lt;&lt;</h2>
+        <table class="gb">
+          <thead><tr><th style="width:28%">FROM / WHEN</th><th>MESSAGE</th></tr></thead>
+          <tbody data-gb></tbody>
+        </table>
+        <p class="small" style="color:#888">Green = verified customer (did not request this). Pink = spam. Yellow = you, local only.</p>
+      </div>
+
+    </div>
+
+    <div class="col-r">
+
+      <div class="panel">
+        <div class="ring">
+          <b>&#9884; THE CLOWN WEBRING &#9884;</b><br>
+          <a href="http://tylerlofftus.com/">&#171;PREV</a> |
+          <a class="ring-rand" href="http://shawkatsanbar.com/">RANDOM</a> |
+          <a href="http://mikiazohrabian.com/">NEXT&#187;</a><br>
+          Member #2 of 3.
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>&#9733; COOL LINKS &#9733;</h3>
+        <p class="small" style="text-align:left">
+          <a href="http://mikiazohrabian.com/"><b>SCREAN</b></a><br>
+          official games store of the dispatch<br><br>
+          <a href="http://tylerlofftus.com/"><b>The Tyler Lofftus Show (IMDb)</b></a><br>
+          corporate client / 40,000 balloons
+        </p>
+        <p class="small"><a href="links.html">more links &gt;&gt;</a></p>
+      </div>
+
+      <div class="panel dark">
+        <p class="small footlinks" style="color:#888">
+          Best viewed in Netscape<br>Navigator 4.0 at 800&times;600.<br><br>
+          &copy; 1997&ndash;2026 SANBAR<br>EMERGENCY CLOWN DISPATCH.<br>
+          <a href="goat-policy.html">goat policy</a> |
+          <a href="terms.html">terms of honk</a> |
+          <a href="guestbook.html">guestbook</a> |
+          <a href="links.html">links</a><br>
+          HONK RESPONSIBLY.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="dispatch.js"></script>
+<script src="guestbook.js"></script>
+</body>
+</html>
