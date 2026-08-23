@@ -31,6 +31,9 @@
 .gc{
   position:absolute;
 }
+.gc-scatter{
+  /* top/left/width set in clown-clutter.js each load */
+}
 .gc-tl{ top:28px; left:4px; width:92px; }
 .gc-tr{ top:22px; right:6px; width:110px; }
 .gc-bl{ bottom:8px; left:4px; width:100px; }
