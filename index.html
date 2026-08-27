@@ -42,10 +42,10 @@
 
       <div class="panel dark">
         <h3 class="mag">&#9835; MIDI JUKEBOX &#9835;</h3>
-        <p class="small">NOW PLAYING:<br><b class="lime">clowns.mid</b></p>
+        <p class="small">NOW PLAYING:<br><b class="lime">cancan.mid</b></p>
         <button id="musicbtn">&#9835; MUSIC IS ON</button>
         <div class="eq on" id="eq"><i></i><i></i><i></i><i></i><i></i></div>
-        <p class="small" style="color:#888">Entry of the Gladiators<br>(J. Fu&#269;&#237;k, 1897)</p>
+        <p class="small" style="color:#888">Galop infernal (Can-Can)<br>(J. Offenbach, 1858)</p>
       </div>
 
       <div class="panel">
@@ -233,35 +233,40 @@
 </div>
 
 <script>
-/* ---- clowns.mid : Entry of the Gladiators, synthesised with Web Audio.
-   Public domain melody (Julius Fucik, 1897). No external files. ---- */
+/* ---- cancan.mid : Offenbach Galop infernal, synthesised with Web Audio.
+   Public domain melody (Orpheus in the Underworld, 1858). No external files. ---- */
 (function(){
   var ctx=null, timer=null, playing=false;
   var btn=document.getElementById('musicbtn'), eq=document.getElementById('eq');
 
   var F={'C3':130.81,'D3':146.83,'E3':164.81,'F3':174.61,'G3':196.00,'A3':220.00,'Bb3':233.08,'B3':246.94,
-         'C4':261.63,'Db4':277.18,'D4':293.66,'Eb4':311.13,'E4':329.63,'F4':349.23,'Gb4':369.99,'G4':392.00,
-         'Ab4':415.30,'A4':440.00,'Bb4':466.16,'B4':493.88,'C5':523.25,'Db5':554.37,'D5':587.33,'E5':659.25};
+         'C4':261.63,'D4':293.66,'E4':329.63,'F4':349.23,'G4':392.00,'A4':440.00,'B4':493.88,
+         'C5':523.25,'D5':587.33,'E5':659.25,'F5':698.46,'G5':783.99,'A5':880.00,'B5':987.77,'C6':1046.50};
 
-  // melody: [note, beats]  — the famous chromatic circus strain
-  var MEL=[['C5',.5],['B4',.5],['Bb4',.5],['A4',.5],['Ab4',.5],['G4',.5],['Gb4',.5],['F4',.5],
-           ['E4',.5],['F4',.5],['G4',.5],['A4',.5],['Bb4',.5],['B4',.5],['C5',1],
-           ['C5',.5],['B4',.5],['Bb4',.5],['A4',.5],['Ab4',.5],['G4',.5],['Gb4',.5],['F4',.5],
-           ['E4',.5],['G4',.5],['C5',.5],['E5',.5],['D5',1],['C5',1],
-           ['G4',.5],['A4',.5],['Bb4',.5],['B4',.5],['C5',1],['E4',1],
-           ['F4',.5],['G4',.5],['A4',.5],['Bb4',.5],['C5',1],['C5',1]];
-  var BASS=['C3','G3','C3','G3','F3','C3','G3','C3'];
+  // famous can-can strain
+  var MEL=[
+           ['G4',.25],['C5',.25],['E5',.25],['G5',.25],['E5',.5],['C5',.5],
+           ['G4',.25],['C5',.25],['E5',.25],['G5',.25],['E5',.5],['C5',.5],
+           ['A4',.25],['C5',.25],['F5',.25],['A5',.25],['F5',.5],['C5',.5],
+           ['G4',.25],['C5',.25],['E5',.25],['G5',.25],['E5',.5],['C5',.5],
+           ['G5',.25],['G5',.25],['G5',.25],['A5',.25],['G5',.5],['E5',.5],
+           ['C5',.25],['C5',.25],['C5',.25],['D5',.25],['E5',.5],['C5',.5],
+           ['G5',.25],['F5',.25],['E5',.25],['D5',.25],['C5',.5],['G4',.5],
+           ['C5',.25],['E5',.25],['G5',.25],['C6',.25],['G5',.5],['C5',1.5]
+          ];
+  var BASS=['C3','G3','C3','G3','F3','C3','C3','G3'];
 
-  var BPM=150, beat=60/BPM;
+  var BPM=176, beat=60/BPM;
 
   function blip(freq,t,dur,type,gain){
-    var o=ctx.createOscillator(), g=ctx.createGain();
-    o.type=type; o.frequency.value=freq;
+    var o=ctx.createOscillator(), o2=ctx.createOscillator(), g=ctx.createGain();
+    o.type=type; o2.type='square';
+    o.frequency.value=freq; o2.frequency.value=freq*2.003;
     g.gain.setValueAtTime(0,t);
-    g.gain.linearRampToValueAtTime(gain,t+0.012);
-    g.gain.exponentialRampToValueAtTime(0.0001,t+dur*0.95);
-    o.connect(g); g.connect(ctx.destination);
-    o.start(t); o.stop(t+dur);
+    g.gain.linearRampToValueAtTime(gain,t+0.008);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur*0.88);
+    o.connect(g); o2.connect(g); g.connect(ctx.destination);
+    o.start(t); o2.start(t); o.stop(t+dur); o2.stop(t+dur);
   }
 
   function schedule(start){
