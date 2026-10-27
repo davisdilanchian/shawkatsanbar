@@ -1,9 +1,9 @@
 /* SANBAR desk scripts — webring + I Agree that unchecks */
 (function(){
   var SITES = [
-    "http://tylerlofftus.com/",
-    "http://shawkatsanbar.com/",
-    "http://mikiazohrabian.com/"
+    "https://tylerlofftus.com/",
+    "https://shawkatsanbar.com/",
+    "https://mikiazohrabian.com/"
   ];
 
   function pickRing(){
